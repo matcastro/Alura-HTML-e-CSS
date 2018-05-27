@@ -1,0 +1,73 @@
+.container{
+    font-size: 1em;
+    position: relative;
+}
+legend, label[for="mensagem"]{
+    font-weight: bold;
+    padding-top: 1em;
+}
+.dados-pessoais [type="text"], [type="email"], textarea{
+    display: block;
+    padding: 0.25em 0.5em;
+    border: 1px solid #CCC;
+    font-family: "Crimson Text", "Times New Roman", serif;
+    font-size: 1em;
+    width: 100%;
+}
+fieldset > fieldset{
+    display: inline;
+}
+[type="text"]:focus, [type="email"]:focus, textarea:focus{
+    background-color: rgba(255,255,0,0.1)
+}
+input:invalid{
+    box-shadow: 0px 0px 3px red;
+}
+[type="submit"]{
+    position: absolute;
+    right: 0;
+    bottom: -1em;
+    text-align: center;
+    background-color: #3C1D3D;
+    color: #F2FFFC;
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
+    font-size: 1.2em;
+    border-color: transparent;
+}
+[type="submit"]:hover,
+[type="submit"]:focus{
+    background-color: #8C1D3D;
+}
+input[value="outro"]~input{
+    display: none;
+}
+input[value="outro"]:checked~input{
+    display: inline;
+}
+label[for="nome"]:after, label[for="email"]:after{
+    content: ''; /* não podemos esquecer do content! */
+    width: 2em;
+    height: 2em;
+    background-color: #8C1D3D;
+    background-size: 50% 50%; /* para a imagem ter 1em x 1em */
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+label[for="nome"], label[for="email"]{
+    position: relative;
+}
+#nome, #email{
+    width: calc(100% - 2em);
+    position: relative;
+    left: 2em;    
+}
+label[for="nome"]:after{
+    background-image: url(../imagens/usuario.png);
+}
+label[for="email"]:after{
+    background-image: url(../imagens/email.png);
+}
